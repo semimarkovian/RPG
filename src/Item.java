@@ -1,5 +1,3 @@
-package rpg;
-
 /***
  * Consumable items
  *

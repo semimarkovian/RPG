@@ -1,5 +1,3 @@
-package rpg;
-
 /***
  * The shop where you can buy items
  *

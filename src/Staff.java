@@ -1,5 +1,3 @@
-package rpg;
-
 /**
  * Used by Sorcerers. Increases intelligence
  */

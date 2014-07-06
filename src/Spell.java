@@ -1,5 +1,3 @@
-package rpg;
-
 /**
  * Spells for the sorcerer class
  */

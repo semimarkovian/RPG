@@ -1,5 +1,6 @@
-package rpg;
-
+/**
+ * This class is for healing potions
+ */
 public class Potion extends Item {
 
     /**

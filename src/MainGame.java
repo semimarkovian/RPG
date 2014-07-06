@@ -1,4 +1,3 @@
-package rpg;
 import javax.swing.*;
 
 /***
@@ -30,13 +29,13 @@ public class MainGame {
 		Player player;
 		switch(characterClass) {
 			case 0:
-				player = new Player("Warrior");
+				player = new Warrior();
 				break;
 			case 1:
-				player = new Player("Rogue");
+				player = new Rogue();
 				break;
 			case 2:
-				player = new Player("Sorcerer");
+				player = new Sorcerer();
 				break;
 		}
 		

@@ -1,5 +1,3 @@
-package rpg;
-
 /**
  * Used by warriors. Increases damage and crit damage.
  */

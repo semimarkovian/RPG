@@ -1,5 +1,3 @@
-package rpg;
-
 /****
  * Weapons include swords, staves, and bows
  */

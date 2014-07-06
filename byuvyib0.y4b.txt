@@ -1,0 +1,26 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	deleted:    rpg/Amulet.java
+#	deleted:    rpg/Battle.java
+#	deleted:    rpg/Bow.java
+#	deleted:    rpg/ChestArmor.java
+#	deleted:    rpg/Constants.java
+#	deleted:    rpg/Equipment.java
+#	deleted:    rpg/Helmet.java
+#	deleted:    rpg/Item.java
+#	deleted:    rpg/MainGame.java
+#	deleted:    rpg/Monster.java
+#	deleted:    rpg/Player.java
+#	deleted:    rpg/Potion.java
+#	deleted:    rpg/Shop.java
+#	deleted:    rpg/Spell.java
+#	deleted:    rpg/Staff.java
+#	deleted:    rpg/Sword.java
+#	deleted:    rpg/Weapon.java
+#
+

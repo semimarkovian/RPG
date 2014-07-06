@@ -1,5 +1,3 @@
-package rpg;
-
 /**
  * Provides magic resist and stuff.
  */

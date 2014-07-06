@@ -1,5 +1,3 @@
-package rpg;
-
 /**
  * Used by Rogues. Increases accuracy and crit chance.
  */

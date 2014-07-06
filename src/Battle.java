@@ -1,5 +1,3 @@
-package rpg;
-
 /***
  * This class represents a battle
  *

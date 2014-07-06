@@ -1,4 +1,3 @@
-package rpg;
 /***
  * This class stores information about enemies.
  *
