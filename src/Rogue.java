@@ -20,7 +20,8 @@ public class Rogue extends Player {
     /**
      * Sets base stats
      */
-    public Rogue() {
+    public Rogue(String playerName) {
+        this.name = playerName;
         this.strength = ROGUE_BASE_STR;
         this.dexterity = ROGUE_BASE_DEX;
         this.intelligence = ROGUE_BASE_INT;

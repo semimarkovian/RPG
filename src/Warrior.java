@@ -20,8 +20,8 @@ public class Warrior extends Player {
     /**
      * Sets base stats
      */
-    public Warrior() {
-        // Sets base stats
+    public Warrior(String playerName) {
+        this.name = playerName;
         this.strength = WARRIOR_BASE_STR;
         this.dexterity = WARRIOR_BASE_DEX;
         this.intelligence = WARRIOR_BASE_INT;

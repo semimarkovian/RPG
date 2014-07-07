@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /***
  * This class stores the attributes, items, etc. of the player
@@ -21,6 +22,10 @@ public class Player {
     public static final int LEVEL11_EXP = 5120;
     public static final int LEVEL12_EXP = 10240;
 
+    /**
+     * Player name
+     */
+    protected String name;
     /**
      * Strength affects physical damage and armor
      */
@@ -100,15 +105,23 @@ public class Player {
     /**
      * Player's inventory
      */
-	protected Item[] inventory;
+	protected ArrayList<Item> inventory;
     /**
-     * Player's equipped items
+     * Player's amulet
      */
-	protected Equipment[] equipped;
+	protected Amulet equippedAmulet;
     /**
-     * Player's equippable items
+     * Player's weapon
      */
-	protected Equipment[] equippable;
+	protected Weapon equippedWeapon;
+    /**
+     * Player's equipped chest armor
+     */
+    protected ChestArmor chestArmor;
+    /**
+     * Player's helmet
+     */
+    protected Helmet equippedHelmet;
 
     /**
      * Constructor
@@ -347,5 +360,7 @@ public class Player {
         return level;
     }
 
-
+    public String getName() {
+        return name;
+    }
 }

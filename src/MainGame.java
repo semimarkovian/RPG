@@ -1,11 +1,15 @@
 import javax.swing.*;
+import java.io.*;
 import java.text.NumberFormat;
 
 /***
  * @author owner
  * The main class
  */
-public class MainGame {
+public class MainGame implements Serializable {
+
+    // Save directory
+    public static String SAVE_DIRECTORY = "E:\\java\\RPG\\save";
 
     // Determines if game continues
     static boolean keepPlaying = true;
@@ -27,12 +31,19 @@ public class MainGame {
                                                         initialOptions,
                                                         "New Game");
 
+        // Quit game
         if(initialChoice == 2) {
             quitGame();
         }
 
+        // Load game
         if(initialChoice == 1) {
-            JOptionPane.showMessageDialog(frame, "Haven't implemented this yet!");
+//            try {
+//
+//            }
+//            catch(IOException i) {
+//                i.printStackTrace();
+//            }
             quitGame();
         }
 
@@ -45,23 +56,28 @@ public class MainGame {
 				                                          null,
 				                                          characterOptions,
 				                                          "Warrior");
+
+
+        // Ask for character name
+        String playerName = JOptionPane.showInputDialog(frame, "What is your name?");
 				                     
 		// Create the character
 		Player player;
 		switch(characterClass) {
-			case 0:
-				player = new Warrior();
+			case 0: // Warrior
+				player = new Warrior(playerName);
 				break;
-			case 1:
-				player = new Rogue();
+			case 1: // Rogue
+				player = new Rogue(playerName);
 				break;
-			case 2:
-				player = new Sorcerer();
+			case 2: // Sorcerer
+				player = new Sorcerer(playerName);
 				break;
-            default:
-                player = new Warrior();
+            default: // Use warrior by default
+                player = new Warrior(playerName);
                 break;
 		}
+
 
         // Main loop
         while(keepPlaying) {
@@ -78,7 +94,8 @@ public class MainGame {
 	public static void mainMenu(Player player) {
 
         // Action options
-        String actionOptions[] = {"Fight", "Rest", "Save", "View Stats", "Inventory", "Quit"};
+        String actionOptions[] = {"Fight", "Rest", "Save", "View Stats", "View Spells", "Equipment", "Inventory",
+                                  "Quit"};
 
         // Prompt action from user
 		int action = JOptionPane.showOptionDialog(null, "What would you like to do?",
@@ -95,17 +112,33 @@ public class MainGame {
             case 1: // Rest
                 break;
             case 2: // Save
+//                try {
+//                    //FileOutputStream fileOut = newFileOutputStream(SAVE_DIRECTORY + "\\");
+//                }
+//                catch(IOException i) {
+//                    i.printStackTrace();
+//                }
                 break;
             case 3: // View Stats
                 playerStats(player);
                 break;
-            case 4: // Inventory
+            case 4: // View spells
+                if(!(player instanceof Sorcerer)) {
+                    JOptionPane.showMessageDialog(null, "You aren't a sorcerer, you have no spells!");
+                }
+                else {
+                    // Display spells here
+                }
                 break;
-            case 5: // Quit
-                keepPlaying = false;
+            case 5: // Equipment
                 break;
+            case 6: // Inventory
+                break;
+            case 7: // Quit
+                quitGame();
         }
 
+        mainMenu(player);
 	}
 
     /**
@@ -117,6 +150,7 @@ public class MainGame {
 
 
         String statsString = "";
+        statsString += "Name: " + player.getName() + "\n";
         statsString += "Level: " + player.getLevel() + "\n";
         statsString += "Life: " + player.getLife() + "/" + player.getMaxLife() + "\n";
         statsString += "Mana: " + player.getMana() + "/" + player.getMaxMana() + "\n";

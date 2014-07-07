@@ -26,6 +26,9 @@ public class Inn {
      * Called when player stays at inn
      */
     public void stayAt(Player player) {
+        // Calculate the rate
+        rate = INN_BASE_RATE * player.getLevel();
+
         // If not enough gold, display error message
         if(player.getGold() < rate) {
             JOptionPane.showMessageDialog(null, "Not enough gold!");

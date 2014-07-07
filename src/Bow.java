@@ -15,6 +15,5 @@ public class Bow extends Weapon {
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
         this.critChance = critChance;
-
     }
 }

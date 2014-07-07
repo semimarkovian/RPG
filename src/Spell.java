@@ -9,9 +9,15 @@ public class Spell {
     private int manaCost;
 
     /**
+     * Name of the spell
+     */
+    private String spellName;
+
+    /**
      * Constructor
      */
-    public Spell(int manaCost) {
+    public Spell(int manaCost, String spellName) {
         this.manaCost = manaCost;
+        this.spellName = spellName;
     }
 }
