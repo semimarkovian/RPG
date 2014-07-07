@@ -65,7 +65,7 @@ public class Player {
     /**
      * Evasion rating is based on dexterity and other things
      */
-	protected int evasionRating;
+	protected int defenseRating;
     /**
      * Armor decreases physical damage
      */
@@ -149,8 +149,8 @@ public class Player {
         maxMana = 20 + 10*intelligence;
 		// Formula for attack rating
 		attackRating = 100 + 10*dexterity;
-		// Formula for evasion rating
-		evasionRating = 100 + 5*dexterity;
+		// Formula for defense rating
+		defenseRating = 100 + 5*dexterity;
 		// Formula for armor
 		armor = 1 + 2*strength;
 		// Formula for magic resist
@@ -251,12 +251,12 @@ public class Player {
      * Getter for evasion rating
      * @return The player's current evasion rating
      */
-    public int getEvasionRating() {
-        return evasionRating;
+    public int getDefenseRating() {
+        return defenseRating;
     }
 
-    public void setEvasionRating(int evasionRating) {
-        this.evasionRating = evasionRating;
+    public void setDefenseRating(int defenseRating) {
+        this.defenseRating = defenseRating;
     }
     /**
      * Getter for armor

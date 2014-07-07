@@ -108,6 +108,8 @@ public class MainGame implements Serializable {
 
         switch(action) {
             case 0: // Fight
+                Battle battle = new Battle(player);
+                battle.fight(player);
                 break;
             case 1: // Rest
                 break;
@@ -161,7 +163,7 @@ public class MainGame implements Serializable {
         statsString += "Intelligence: " + player.getIntelligence() + "\n";
         statsString += "Vitality: " + player.getVitality() + "\n";
         statsString += "Attack Rating: " + player.getAttackRating() + "\n";
-        statsString += "Evasion Rating: " + player.getEvasionRating() + "\n";
+        statsString += "Defense Rating: " + player.getDefenseRating() + "\n";
         statsString += "Armor: " + player.getArmor() + "\n";
         statsString += "Magic Resist: " + player.getMagicResist() + "\n";
         statsString += "Crit Chance: " + percentFormat.format(player.getCritChance()) + "\n";

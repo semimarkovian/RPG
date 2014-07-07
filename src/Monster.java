@@ -38,6 +38,13 @@ public class Monster {
 	private String damageType;
 
     /**
+     * Default constructor
+     */
+    public Monster() {
+
+    }
+
+    /**
      * @param MonsterType The type of monster (name)
      * @param life The monster's life
      * @param armor The monster's armor
@@ -47,7 +54,7 @@ public class Monster {
      * @param defenseRating The monster's defense rating
      * @param damageType The monster's damage type (physical or magical)
      */
-	public Monster(String MonsterType, int life, int armor, int magicResist, int baseDamage, int accuracyRating,
+	public Monster(String monsterType, int life, int armor, int magicResist, int baseDamage, int accuracyRating,
                    int defenseRating, String damageType) {
 		this.monsterType = monsterType;
         this.life = life;
@@ -58,6 +65,13 @@ public class Monster {
         this.defenseRating = defenseRating;
         this.damageType = damageType;
 	}
+
+    /**
+     * The action the monster takes in battle
+     */
+    public void attacks() {
+
+    }
 
     public String getMonsterType() {
         return monsterType;
