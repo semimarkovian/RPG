@@ -42,6 +42,18 @@ public class Player {
      */
 	protected int life;
     /**
+     * Player's maximum life
+     */
+    protected int maxLife;
+    /**
+     * Mana is based on intelligence and other things
+     */
+    protected int mana;
+    /**
+     * Player's maximum mana.
+     */
+    protected int maxMana;
+    /**
      * Accuracy is based on dexterity and other things
      */
 	protected int attackRating;
@@ -118,8 +130,10 @@ public class Player {
 	 * 
 	 */
 	public void calcStats() {
-		// Formula for life
-		life = 10 + 5*vitality;
+		// Formula for max life
+		maxLife = 10 + 5*vitality;
+        // Formula for max mana
+        maxMana = 20 + 10*intelligence;
 		// Formula for attack rating
 		attackRating = 100 + 10*dexterity;
 		// Formula for evasion rating
@@ -135,6 +149,7 @@ public class Player {
 
     /***
      * Getter for life
+     * @return The player's current life
      */
     public int getLife() {
         return this.life;
@@ -142,8 +157,195 @@ public class Player {
 
     /***
      * Setter for life
+     * @param  life The player's new life
      */
     public void setLife(int life) {
         this.life = life;
     }
+
+    /**
+     * Getter for strength
+     * @return The player's current strength
+     */
+    public int getStrength() {
+        return strength;
+    }
+
+    /**
+     * Setter for strength
+     * @param strength The player's new strength
+     */
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    /**
+     * Getter for dexterity
+     * @return The player's current dexterity
+     */
+    public int getDexterity() {
+        return dexterity;
+    }
+
+    public void setDexterity(int dexterity) {
+        this.dexterity = dexterity;
+    }
+    /**
+     * Getter for intelligence
+     * @return The player's current intelligence
+     */
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
+    }
+    /**
+     * Getter for vitality
+     * @return The player's current vitality
+     */
+    public int getVitality() {
+        return vitality;
+    }
+
+    public void setVitality(int vitality) {
+        this.vitality = vitality;
+    }
+    /**
+     * Getter for mana
+     * @return The player's current mana
+     */
+    public int getMana() {
+        return mana;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+    /**
+     * Getter for attack rating
+     * @return The player's current attack rating
+     */
+    public int getAttackRating() {
+        return attackRating;
+    }
+
+    public void setAttackRating(int attackRating) {
+        this.attackRating = attackRating;
+    }
+    /**
+     * Getter for evasion rating
+     * @return The player's current evasion rating
+     */
+    public int getEvasionRating() {
+        return evasionRating;
+    }
+
+    public void setEvasionRating(int evasionRating) {
+        this.evasionRating = evasionRating;
+    }
+    /**
+     * Getter for armor
+     * @return The player's current armor
+     */
+    public int getArmor() {
+        return armor;
+    }
+
+    public void setArmor(int armor) {
+        this.armor = armor;
+    }
+    /**
+     * Getter for magic resist
+     * @return The player's current magic resist
+     */
+    public int getMagicResist() {
+        return magicResist;
+    }
+
+    public void setMagicResist(int magicResist) {
+        this.magicResist = magicResist;
+    }
+    /**
+     * Getter for base damage
+     * @return The player's current base damage
+     */
+    public int getBaseDamage() {
+        return baseDamage;
+    }
+
+    public void setBaseDamage(int baseDamage) {
+        this.baseDamage = baseDamage;
+    }
+    /**
+     * Getter for crit chance
+     * @return The player's current crit chance
+    */
+    public double getCritChance() {
+        return critChance;
+    }
+
+    public void setCritChance(double critChance) {
+        this.critChance = critChance;
+    }
+    /**
+     * Getter for crit damage
+     * @return The player's current crit damage
+     */
+    public double getCritDamage() {
+        return critDamage;
+    }
+
+    public void setCritDamage(double critDamage) {
+        this.critDamage = critDamage;
+    }
+    /**
+     * Getter for experience
+     * @return The player's current experience
+     */
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp) {
+        this.exp = exp;
+    }
+    /**
+     * Getter for gold
+     * @return The player's current gold
+     */
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public int getMaxLife() {
+        return maxLife;
+    }
+
+    public void setMaxLife(int maxLife) {
+        this.maxLife = maxLife;
+    }
+
+    public int getMaxMana() {
+        return maxMana;
+    }
+
+    public void setMaxMana(int maxMana) {
+        this.maxMana = maxMana;
+    }
+
+    /**
+     * Getter for level
+     * @return The player's current level
+     */
+    public int getLevel() {
+        return level;
+    }
+
+
 }

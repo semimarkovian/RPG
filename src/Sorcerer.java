@@ -26,9 +26,15 @@ public class Sorcerer extends Player {
         this.dexterity = SORCERER_BASE_DEX;
         this.intelligence = SORCERER_BASE_INT;
         this.vitality = SORCERER_BASE_VIT;
+        this.critChance = SORCERER_BASE_CRIT_CHANCE;
+        this.critDamage = SORCERER_BASE_CRIT_DAMAGE;
 
         // Calculate stats
         calcStats();
+
+        // Set life and mana to full
+        life = maxLife;
+        mana = maxMana;
     }
 
     /**

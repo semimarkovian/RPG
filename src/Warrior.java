@@ -8,8 +8,8 @@ public class Warrior extends Player {
     public static final int WARRIOR_BASE_DEX = 15;
     public static final int WARRIOR_BASE_INT = 5;
     public static final int WARRIOR_BASE_VIT = 20;
-    public static final double WARRIOR_CRIT_CHANCE = 0.05;
-    public static final double WARRIOR_CRIT_DAMAGE = 2.0;
+    public static final double WARRIOR_BASE_CRIT_CHANCE = 0.05;
+    public static final double WARRIOR_BASE_CRIT_DAMAGE = 2.0;
 
     // Warrior stat gains
     public static final int WARRIOR_STR_GAIN = 4;
@@ -26,9 +26,15 @@ public class Warrior extends Player {
         this.dexterity = WARRIOR_BASE_DEX;
         this.intelligence = WARRIOR_BASE_INT;
         this.vitality = WARRIOR_BASE_VIT;
+        this.critChance = WARRIOR_BASE_CRIT_CHANCE;
+        this.critDamage = WARRIOR_BASE_CRIT_DAMAGE;
 
         // Calculate stats
         calcStats();
+
+        // Set life and mana to full
+        life = maxLife;
+        mana = maxMana;
     }
 
     /**

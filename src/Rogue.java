@@ -25,9 +25,15 @@ public class Rogue extends Player {
         this.dexterity = ROGUE_BASE_DEX;
         this.intelligence = ROGUE_BASE_INT;
         this.vitality = ROGUE_BASE_VIT;
+        this.critChance = ROGUE_BASE_CRIT_CHANCE;
+        this.critDamage = ROGUE_BASE_CRIT_DAMAGE;
 
         // Calculate stats
         calcStats();
+
+        // Set life and mana to full
+        life = maxLife;
+        mana = maxMana;
     }
 
     /**
