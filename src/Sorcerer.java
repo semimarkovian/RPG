@@ -28,7 +28,7 @@ public class Sorcerer extends Player {
     /**
      * Sorcerer's spells
      */
-    private ArrayList<Spell> spells;
+    protected ArrayList<Spell> spells;
 
     /**
      * Sets base stats
@@ -51,9 +51,9 @@ public class Sorcerer extends Player {
         life = maxLife;
         mana = maxMana;
 
-        // Set up spell list
+        // Set up spell list - start with Magic Missile
         this.spells = new ArrayList<Spell>();
-        this.spells.add(new Spell(1, "Magic Missile"));
+        this.spells.add(new MagicMissile());
     }
 
     /**
@@ -65,5 +65,9 @@ public class Sorcerer extends Player {
         this.dexterity +=SORCERER_DEX_GAIN;
         this.intelligence += SORCERER_INT_GAIN;
         this.vitality += SORCERER_VIT_GAIN;
+    }
+
+    public ArrayList<Spell> getSpells() {
+        return spells;
     }
 }

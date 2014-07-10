@@ -130,6 +130,12 @@ public class MainGame implements Serializable {
                 }
                 else {
                     // Display spells here
+                    String spellString = "";
+                    for(Spell s : ((Sorcerer)player).getSpells()) {
+                        spellString += s.getSpellName() + ": Level " + s.getSpellLevel() +", " +
+                                s.getMinDamage() + "-" + s.getMaxDamage() + " damage, " + s.getManaCost() + " mana.";
+                    }
+                    JOptionPane.showMessageDialog(null, spellString);
                 }
                 break;
             case 5: // Equipment
