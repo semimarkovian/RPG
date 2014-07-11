@@ -11,7 +11,12 @@ public class ChestArmor extends Equipment {
     /**
      * Constructor
      */
-    public ChestArmor(int armor) {
+    public ChestArmor(int armor, String equipmentName) {
+        super(equipmentName);
         this.armor = armor;
+    }
+
+    public int getArmor() {
+        return armor;
     }
 }

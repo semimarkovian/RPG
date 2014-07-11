@@ -4,9 +4,25 @@
  */
 public class Equipment {
     /**
-     * Constructor
+     * Name of equipment
      */
-	public Equipment() {
-		
+    protected String equipmentName;
+
+    /**
+     * Default constructor
+     */
+    public Equipment() {
+
+    }
+
+    /**
+     * @param equipmentName Name of equipment
+     */
+	public Equipment(String equipmentName) {
+		this.equipmentName = equipmentName;
 	}
+
+    public String getEquipmentName() {
+        return equipmentName;
+    }
 }

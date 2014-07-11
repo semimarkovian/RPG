@@ -45,7 +45,8 @@ public class Rogue extends Player {
 
         Bow startingBow = new Bow(ROGUE_STARTING_WEAPON_MIN_DAMAGE, ROGUE_STARTING_WEAPON_MAX_DAMAGE,
                 ROGUE_STARTING_WEAPON_CRIT_CHANCE, ROGUE_STARTING_WEAPON_DEXTERITY, ROGUE_STARING_WEAPON_NAME);
-        equipment.add(startingBow);
+        this.equipment.add(startingBow);
+        this.equippedWeapon = startingBow;
     }
 
     /**

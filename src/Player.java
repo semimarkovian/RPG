@@ -137,8 +137,12 @@ public class Player {
 		
 		// Starting gold
 		this.gold = STARTING_GOLD;
-		
+
+        // Set the character class
 		this.characterClass = characterClass;
+
+        // Initialize the equipment ArrayList
+        equipment = new ArrayList<Equipment>();
 
 	}
 	

@@ -139,8 +139,10 @@ public class MainGame implements Serializable {
                 }
                 break;
             case 5: // Equipment
+                equipmentScreen(player);
                 break;
             case 6: // Inventory
+                inventoryScreen(player);
                 break;
             case 7: // Quit
                 quitGame();
@@ -148,6 +150,57 @@ public class MainGame implements Serializable {
 
         mainMenu(player);
 	}
+
+    /**
+     * Displays equipment
+     */
+    public static void equipmentScreen(Player player) {
+        // Prompt user for action
+        String[] actionOptions = {"Weapon", "Chest Armor", "Helmet", "Amulet"};
+        int action = JOptionPane.showOptionDialog(null, "What equipment would you like to view?",
+                                                  "Equipment Menu",
+                                                  0,
+                                                  JOptionPane.QUESTION_MESSAGE,
+                                                  null,
+                                                  actionOptions,
+                                                  "Weapon");
+
+        switch(action) {
+            case 0: // Weapon
+                String equippedWeaponString = "Equipped: " + player.equippedWeapon.weaponName + "\n";
+                equippedWeaponString += "Damage: " + player.equippedWeapon.minDamage + "-" +
+                        player.equippedWeapon.maxDamage + "\n";
+                if(player.equippedWeapon instanceof Sword) {
+                    equippedWeaponString += "+Strength: " + ((Sword) player.equippedWeapon).strength +"\n";
+                    equippedWeaponString += "+Crit Damage: " + ((Sword) player.equippedWeapon).critDamage +"\n";
+                }
+                else if(player.equippedWeapon instanceof Bow) {
+                    equippedWeaponString += "+Dexterity: " + ((Bow) player.equippedWeapon).dexterity +"\n";
+                    equippedWeaponString += "+Crit chance: " + ((Bow) player.equippedWeapon).critChance +"\n";
+                }
+                else if(player.equippedWeapon instanceof Staff) {
+                    equippedWeaponString += "+Intelligence: " + ((Staff) player.equippedWeapon).intelligence +"\n";
+                }
+
+                JOptionPane.showMessageDialog(null, equippedWeaponString);
+
+                break;
+            case 1: // Chest Armor
+                break;
+            case 2: // Helmet
+                break;
+            case 3: // Amulet
+                break;
+        }
+
+    }
+
+    /**
+     * Displays inventory
+     */
+    public static void inventoryScreen(Player player) {
+
+    }
 
     /**
      * Displays player stats

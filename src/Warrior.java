@@ -46,7 +46,9 @@ public class Warrior extends Player {
         // Starting weapon
         Sword startingSword = new Sword(WARRIOR_STARTING_WEAPON_MIN_DAMAGE, WARRIOR_STARTING_WEAPON_MAX_DAMAGE,
                 WARRIOR_STARTING_WEAPON_CRIT_DAMAGE, WARRIOR_STARTING_WEAPON_STRENGTH, WARRIOR_STARING_WEAPON_NAME);
-        equipment.add(startingSword);
+        this.equipment.add(startingSword);
+        this.equippedWeapon = startingSword;
+
     }
 
     /**

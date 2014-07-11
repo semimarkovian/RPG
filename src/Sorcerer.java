@@ -64,6 +64,8 @@ public class Sorcerer extends Player {
         // Starting weapon
         Staff startingStaff = new Staff(SORCERER_STARTING_WEAPON_MIN_DAMAGE, SORCERER_STARTING_WEAPON_MAX_DAMAGE,
                 SORCERER_BASE_INT, SORCERER_STARING_WEAPON_NAME);
+        this.equipment.add(startingStaff);
+        this.equippedWeapon = startingStaff;
     }
 
     /**
