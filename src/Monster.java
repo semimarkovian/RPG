@@ -69,7 +69,7 @@ public class Monster {
     /**
      * The action the monster takes in battle
      */
-    public void attacks() {
+    public void attacks(Player player) {
 
     }
 

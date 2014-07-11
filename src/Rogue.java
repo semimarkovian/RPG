@@ -17,6 +17,13 @@ public class Rogue extends Player {
     public static final int ROGUE_INT_GAIN = 1;
     public static final int ROGUE_VIT_GAIN = 2;
 
+    // Rogue starting weapon
+    public static final int ROGUE_STARTING_WEAPON_MIN_DAMAGE = 1;
+    public static final int ROGUE_STARTING_WEAPON_MAX_DAMAGE = 2;
+    public static final int ROGUE_STARTING_WEAPON_DEXTERITY = 3;
+    public static final double ROGUE_STARTING_WEAPON_CRIT_CHANCE = 0.05;
+    public static final String ROGUE_STARING_WEAPON_NAME = "Wooden Bow";
+
     /**
      * Sets base stats
      */
@@ -35,6 +42,10 @@ public class Rogue extends Player {
         // Set life and mana to full
         life = maxLife;
         mana = maxMana;
+
+        Bow startingBow = new Bow(ROGUE_STARTING_WEAPON_MIN_DAMAGE, ROGUE_STARTING_WEAPON_MAX_DAMAGE,
+                ROGUE_STARTING_WEAPON_CRIT_CHANCE, ROGUE_STARTING_WEAPON_DEXTERITY, ROGUE_STARING_WEAPON_NAME);
+        equipment.add(startingBow);
     }
 
     /**

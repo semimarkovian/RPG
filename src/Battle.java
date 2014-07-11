@@ -41,7 +41,7 @@ public class Battle {
         while (!monsters.isEmpty()) {
 
             playerTurn(player);
-            monsterTurn();
+            monsterTurn(player);
 
 
         }
@@ -94,9 +94,9 @@ public class Battle {
     /**
      * Monsters act
      */
-    public void monsterTurn() {
+    public void monsterTurn(Player player) {
         for(Monster m : monsters) {
-            m.attacks();
+            m.attacks(player);
         }
     }
 }

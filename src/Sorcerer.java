@@ -20,6 +20,12 @@ public class Sorcerer extends Player {
     public static final int SORCERER_INT_GAIN = 4;
     public static final int SORCERER_VIT_GAIN = 2;
 
+    // Sorcerer starting weapon
+    public static final int SORCERER_STARTING_WEAPON_MIN_DAMAGE = 1;
+    public static final int SORCERER_STARTING_WEAPON_MAX_DAMAGE = 2;
+    public static final int SORCERER_STARTING_WEAPON_INTELLIGENCE = 3;
+    public static final String SORCERER_STARING_WEAPON_NAME = "Wooden Staff";
+
     /**
      * Sorcerer has chance to double-cast
      */
@@ -54,6 +60,10 @@ public class Sorcerer extends Player {
         // Set up spell list - start with Magic Missile
         this.spells = new ArrayList<Spell>();
         this.spells.add(new MagicMissile());
+
+        // Starting weapon
+        Staff startingStaff = new Staff(SORCERER_STARTING_WEAPON_MIN_DAMAGE, SORCERER_STARTING_WEAPON_MAX_DAMAGE,
+                SORCERER_BASE_INT, SORCERER_STARING_WEAPON_NAME);
     }
 
     /**

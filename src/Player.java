@@ -107,6 +107,10 @@ public class Player {
      */
 	protected ArrayList<Item> inventory;
     /**
+     * Player's equippable items
+     */
+    protected ArrayList<Equipment> equipment;
+    /**
      * Player's amulet
      */
 	protected Amulet equippedAmulet;

@@ -17,6 +17,13 @@ public class Warrior extends Player {
     public static final int WARRIOR_INT_GAIN = 1;
     public static final int WARRIOR_VIT_GAIN = 3;
 
+    // Warrior starting weapon
+    public static final int WARRIOR_STARTING_WEAPON_MIN_DAMAGE = 1;
+    public static final int WARRIOR_STARTING_WEAPON_MAX_DAMAGE = 3;
+    public static final double WARRIOR_STARTING_WEAPON_CRIT_DAMAGE = 0;
+    public static final int WARRIOR_STARTING_WEAPON_STRENGTH = 0;
+    public static final String WARRIOR_STARING_WEAPON_NAME = "Wooden Sword";
+
     /**
      * Sets base stats
      */
@@ -35,6 +42,11 @@ public class Warrior extends Player {
         // Set life and mana to full
         life = maxLife;
         mana = maxMana;
+
+        // Starting weapon
+        Sword startingSword = new Sword(WARRIOR_STARTING_WEAPON_MIN_DAMAGE, WARRIOR_STARTING_WEAPON_MAX_DAMAGE,
+                WARRIOR_STARTING_WEAPON_CRIT_DAMAGE, WARRIOR_STARTING_WEAPON_STRENGTH, WARRIOR_STARING_WEAPON_NAME);
+        equipment.add(startingSword);
     }
 
     /**

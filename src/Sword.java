@@ -6,14 +6,24 @@ public class Sword extends Weapon {
     /**
      * Increase in crit damage
      */
-    private double critDamage;
+    protected double critDamage;
 
     /**
-     * Constructor
+     * Increase in strength
      */
-    public Sword(int minDamage, int maxDamage, double critDamage) {
-        this.minDamage = minDamage;
-        this.maxDamage = maxDamage;
+    protected double strength;
+
+
+    /**
+     * @param minDamage Min damage of sword
+     * @param maxDamage Max damage of sword
+     * @param critDamage Increase in crit damage
+     * @param strength Increase in strength
+     * @param weaponName Name of weapon
+     */
+    public Sword(int minDamage, int maxDamage, double critDamage, int strength, String weaponName) {
+        super(minDamage, maxDamage, weaponName);
         this.critDamage = critDamage;
+        this.strength = strength;
     }
 }
