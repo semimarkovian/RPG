@@ -1,8 +1,10 @@
+import java.io.Serializable;
+
 /***
  * Includes Weapon, ChestArmor, Helmet, and Amulet
  * 
  */
-public class Equipment {
+public class Equipment implements Serializable {
     /**
      * Name of equipment
      */

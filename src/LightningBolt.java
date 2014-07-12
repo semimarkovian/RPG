@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * The lightning bolt spell
  */
-public class LightningBolt extends Spell {
+public class LightningBolt extends Spell implements Serializable {
 
     /**
      * Base mana cost

@@ -1,8 +1,10 @@
+import java.io.Serializable;
+
 /***
  * Consumable items
  *
  */
-public class Item {
+public class Item implements Serializable {
     /**
      * Constructor
      */

@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /***
  * The shop where you can buy items
  *
  */
-public class Shop {
+public class Shop implements Serializable {
 
     /**
      * The items the shop has for sale

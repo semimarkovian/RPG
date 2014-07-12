@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * The Warrior class
  */
-public class Warrior extends Player {
+public class Warrior extends Player implements Serializable {
 
     // Warrior base stats
     public static final int WARRIOR_BASE_STR = 20;

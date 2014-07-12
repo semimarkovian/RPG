@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.*;
 import java.math.*;
@@ -6,7 +7,7 @@ import java.math.*;
  * This class represents a battle
  *
  */
-public class Battle {
+public class Battle implements Serializable {
 
     /**
      * The monsters in the battle

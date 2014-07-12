@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * Provides armor
  */
-public class ChestArmor extends Equipment {
+public class ChestArmor extends Equipment implements Serializable {
 
     /**
      * Amount of armor provided

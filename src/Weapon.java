@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /****
  * Weapons include swords, staves, and bows
  */
-public class Weapon extends Equipment {
+public class Weapon extends Equipment implements Serializable {
 
     /**
      * Minimum damage of the weapon

@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * Created by owner on 7/7/2014.
  */
-public class Slime extends Monster {
+public class Slime extends Monster implements Serializable {
     // Slime stats
     public static final String SLIME_MONSTER_TYPE = "Slime";
     public static final int SLIME_LIFE = 2;

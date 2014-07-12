@@ -6,7 +6,7 @@ import java.text.NumberFormat;
  * @author owner
  * The main class
  */
-public class MainGame implements Serializable {
+public class MainGame implements Serializable  {
 
     // Save directory
     public static String SAVE_DIRECTORY = "E:\\java\\RPG\\save";
@@ -38,12 +38,28 @@ public class MainGame implements Serializable {
 
         // Load game
         if(initialChoice == 1) {
-//            try {
-//
-//            }
-//            catch(IOException i) {
-//                i.printStackTrace();
-//            }
+            // Prompt name of character
+            String characterName = JOptionPane.showInputDialog(null, "What is the character name?");
+            Player player = null;
+            try {
+                // Load the character
+                FileInputStream fileIn = new FileInputStream(SAVE_DIRECTORY+"\\"+characterName+".sav");
+                ObjectInputStream in = new ObjectInputStream(fileIn);
+                player = (Player) in.readObject();
+                in.close();
+                fileIn.close();
+                // Start game with the loaded character
+                mainMenu(player);
+            }
+            // Catch any IOException
+            catch(IOException i) {
+                i.printStackTrace();
+            }
+            // Catch any ClassNotFoundException
+            catch(ClassNotFoundException c) {
+                System.out.println("Player class not found");
+                c.printStackTrace();
+            }
             quitGame();
         }
 
@@ -114,12 +130,18 @@ public class MainGame implements Serializable {
             case 1: // Rest
                 break;
             case 2: // Save
-//                try {
-//                    //FileOutputStream fileOut = newFileOutputStream(SAVE_DIRECTORY + "\\");
-//                }
-//                catch(IOException i) {
-//                    i.printStackTrace();
-//                }
+                try {
+                    FileOutputStream fileOut = new FileOutputStream(SAVE_DIRECTORY + "\\" + player.getName() +".sav");
+                    ObjectOutputStream out = new ObjectOutputStream(fileOut);
+                    out.writeObject(player);
+                    out.close();
+                    fileOut.close();
+                    JOptionPane.showMessageDialog(null, "Saved game!");
+
+                }
+                catch(IOException i) {
+                    i.printStackTrace();
+                }
                 break;
             case 3: // View Stats
                 playerStats(player);

@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * The Rogue class
  */
-public class Rogue extends Player {
+public class Rogue extends Player implements Serializable {
 
     // Rogue constants
     public static final int ROGUE_BASE_STR = 15;

@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * The basic spell of all Sorcerers
  */
-public class MagicMissile extends Spell {
+public class MagicMissile extends Spell implements Serializable {
     /**
      * Base mana cost
      */

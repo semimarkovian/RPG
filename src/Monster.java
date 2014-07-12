@@ -1,8 +1,10 @@
+import java.io.Serializable;
+
 /***
  * This class stores information about enemies.
  *
  */
-public class Monster {
+public class Monster implements Serializable {
 
     /**
      *  The type of monster

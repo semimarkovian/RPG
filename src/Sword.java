@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * Used by warriors. Increases damage and crit damage.
  */
-public class Sword extends Weapon {
+public class Sword extends Weapon implements Serializable {
 
     /**
      * Increase in crit damage
@@ -12,7 +14,6 @@ public class Sword extends Weapon {
      * Increase in strength
      */
     protected double strength;
-
 
     /**
      * @param minDamage Min damage of sword

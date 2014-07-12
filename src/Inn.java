@@ -1,9 +1,10 @@
 import javax.swing.*;
+import java.io.Serializable;
 
 /**
  * The inn is where the player heals
  */
-public class Inn {
+public class Inn implements Serializable {
 
     /**
      * Base rate

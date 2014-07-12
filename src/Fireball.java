@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * The fireball spell!
  */
-public class Fireball extends Spell {
+public class Fireball extends Spell implements Serializable {
     /**
      * Base mana cost
      */

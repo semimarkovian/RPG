@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /***
  * This class stores the attributes, items, etc. of the player
  * @author owner
  */
-public class Player {
+public class Player implements Serializable {
     // Starting gold
     public static final int STARTING_GOLD = 100;
 

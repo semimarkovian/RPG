@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * Used by Rogues. Increases accuracy and crit chance.
  */
-public class Bow extends Weapon {
+public class Bow extends Weapon implements Serializable {
 
     /**
      * Crit chance increase

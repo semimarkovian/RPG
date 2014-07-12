@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * Spells for the sorcerer class
  */
-public class Spell {
+public class Spell implements Serializable {
 
     /**
      * Mana cost of the spell.

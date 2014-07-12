@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * Provides magic resist and stuff.
  */
-public class Amulet extends Equipment {
+public class Amulet extends Equipment implements Serializable {
 
     /**
      * Plus to magic resist

@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * The sorcerer class
  */
-public class Sorcerer extends Player {
+public class Sorcerer extends Player implements Serializable {
 
     // Sorcerer constants
     public static final int SORCERER_BASE_STR = 10;
