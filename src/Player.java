@@ -139,11 +139,11 @@ public class Player implements Serializable {
 		// Starting gold
 		this.gold = STARTING_GOLD;
 
-        // Set the character class
-		this.characterClass = characterClass;
-
         // Initialize the equipment ArrayList
         equipment = new ArrayList<Equipment>();
+
+        // Initialize the inventory Arraylist
+        inventory = new ArrayList<Item>();
 
 	}
 	

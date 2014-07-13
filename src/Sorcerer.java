@@ -41,7 +41,10 @@ public class Sorcerer extends Player implements Serializable {
      * Sets base stats
      */
     public Sorcerer(String playerName) {
-        // Base stats
+        // Call super constructor
+        super();
+
+        // Initialize stats
         this.name = playerName;
         this.strength = SORCERER_BASE_STR;
         this.dexterity = SORCERER_BASE_DEX;
@@ -50,6 +53,7 @@ public class Sorcerer extends Player implements Serializable {
         this.critChance = SORCERER_BASE_CRIT_CHANCE;
         this.critDamage = SORCERER_BASE_CRIT_DAMAGE;
         this.doubleChance = SORCERER_BASE_DOUBLE_CHANCE;
+        this.characterClass = "Sorcerer";
 
         // Calculate stats
         calcStats();
@@ -67,6 +71,10 @@ public class Sorcerer extends Player implements Serializable {
                 SORCERER_BASE_INT, SORCERER_STARING_WEAPON_NAME);
         this.equipment.add(startingStaff);
         this.equippedWeapon = startingStaff;
+
+        // Start with a few mana potions
+        this.inventory.add(new Potion(0, 5));
+        this.inventory.add(new Potion(0, 5));
     }
 
     /**

@@ -30,6 +30,10 @@ public class Rogue extends Player implements Serializable {
      * Sets base stats
      */
     public Rogue(String playerName) {
+        // Call super constructor
+        super();
+
+        // Initialize stats
         this.name = playerName;
         this.strength = ROGUE_BASE_STR;
         this.dexterity = ROGUE_BASE_DEX;
@@ -37,6 +41,7 @@ public class Rogue extends Player implements Serializable {
         this.vitality = ROGUE_BASE_VIT;
         this.critChance = ROGUE_BASE_CRIT_CHANCE;
         this.critDamage = ROGUE_BASE_CRIT_DAMAGE;
+        this.characterClass = "Rogue";
 
         // Calculate stats
         calcStats();
@@ -49,6 +54,10 @@ public class Rogue extends Player implements Serializable {
                 ROGUE_STARTING_WEAPON_CRIT_CHANCE, ROGUE_STARTING_WEAPON_DEXTERITY, ROGUE_STARING_WEAPON_NAME);
         this.equipment.add(startingBow);
         this.equippedWeapon = startingBow;
+
+        // Start with a few health potions
+        this.inventory.add(new Potion(5, 0));
+        this.inventory.add(new Potion(5, 0));
     }
 
     /**

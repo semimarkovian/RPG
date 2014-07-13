@@ -173,8 +173,11 @@ public class MainGame implements Serializable  {
         mainMenu(player);
 	}
 
+
+
     /**
      * Displays equipment
+     * @param player The player object
      */
     public static void equipmentScreen(Player player) {
         // Prompt user for action
@@ -219,13 +222,22 @@ public class MainGame implements Serializable  {
 
     /**
      * Displays inventory
+     * @param player The player object
      */
     public static void inventoryScreen(Player player) {
-
+        String inventoryString = "";
+        for(Item i : player.inventory) {
+            if(i instanceof Potion) {
+                inventoryString += "Potion: " + "Life: " + ((Potion) i).getHealAmount() +
+                        ", Mana: " + ((Potion) i).getManaAmount() + "\n";
+            }
+        }
+        JOptionPane.showMessageDialog(null, inventoryString);
     }
 
     /**
      * Displays player stats
+     * @param player The player object
      */
     public static void playerStats(Player player) {
         // Show crit as percent

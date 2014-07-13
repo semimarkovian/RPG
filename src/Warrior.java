@@ -30,6 +30,10 @@ public class Warrior extends Player implements Serializable {
      * Sets base stats
      */
     public Warrior(String playerName) {
+        // Call super constructor
+        super();
+
+        // Initialize stats
         this.name = playerName;
         this.strength = WARRIOR_BASE_STR;
         this.dexterity = WARRIOR_BASE_DEX;
@@ -37,6 +41,7 @@ public class Warrior extends Player implements Serializable {
         this.vitality = WARRIOR_BASE_VIT;
         this.critChance = WARRIOR_BASE_CRIT_CHANCE;
         this.critDamage = WARRIOR_BASE_CRIT_DAMAGE;
+        this.characterClass = "Warrior";
 
         // Calculate stats
         calcStats();
@@ -50,6 +55,10 @@ public class Warrior extends Player implements Serializable {
                 WARRIOR_STARTING_WEAPON_CRIT_DAMAGE, WARRIOR_STARTING_WEAPON_STRENGTH, WARRIOR_STARING_WEAPON_NAME);
         this.equipment.add(startingSword);
         this.equippedWeapon = startingSword;
+
+        // Start with a few health potions
+        this.inventory.add(new Potion(5, 0));
+        this.inventory.add(new Potion(5, 0));
 
     }
 
