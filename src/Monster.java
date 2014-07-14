@@ -13,31 +13,39 @@ public class Monster implements Serializable {
     /**
      *  The monster's life
      */
-	private int life;
+    protected int life;
     /**
      *  The monster's armor
      */
-	private int armor;
+    protected int armor;
     /**
      *  The monster's magic resist
      */
-	private int magicResist;
+    protected int magicResist;
     /**
      *  The monster's base damage
      */
-	private int baseDamage;
+    protected int baseDamage;
     /**
      * The monster's accuracy rating
      */
-    private int accuracyRating;
+    protected int accuracyRating;
     /**
      * The monster's defense rating
      */
-    private int defenseRating;
+    protected int defenseRating;
     /**
      * The monster's damage type
      */
-	private String damageType;
+	protected String damageType;
+    /**
+     * The monster's exp bounty
+     */
+    protected int expBounty;
+    /**
+     * The monster's gold bounty
+     */
+    protected int goldBounty;
 
     /**
      * Default constructor
@@ -47,7 +55,7 @@ public class Monster implements Serializable {
     }
 
     /**
-     * @param MonsterType The type of monster (name)
+     * @param monsterType The type of monster (name)
      * @param life The monster's life
      * @param armor The monster's armor
      * @param magicResist The monster's magic resist
@@ -57,7 +65,7 @@ public class Monster implements Serializable {
      * @param damageType The monster's damage type (physical or magical)
      */
 	public Monster(String monsterType, int life, int armor, int magicResist, int baseDamage, int accuracyRating,
-                   int defenseRating, String damageType) {
+                   int defenseRating, String damageType, int expBounty, int goldBounty) {
 		this.monsterType = monsterType;
         this.life = life;
         this.armor = armor;
@@ -66,6 +74,8 @@ public class Monster implements Serializable {
         this.accuracyRating = accuracyRating;
         this.defenseRating = defenseRating;
         this.damageType = damageType;
+        this.expBounty = expBounty;
+        this.goldBounty = goldBounty;
 	}
 
     /**
@@ -134,4 +144,6 @@ public class Monster implements Serializable {
     public void setDamageType(String damageType) {
         this.damageType = damageType;
     }
+
+
 }

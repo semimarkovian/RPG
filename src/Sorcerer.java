@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -90,5 +91,15 @@ public class Sorcerer extends Player implements Serializable {
 
     public ArrayList<Spell> getSpells() {
         return spells;
+    }
+
+    public void displaySpells() {
+        // Display spells here
+        String spellString = "";
+        for(Spell s : this.spells) {
+            spellString += s.getSpellName() + ": Level " + s.getSpellLevel() +", " +
+                    s.getMinDamage() + "-" + s.getMaxDamage() + " damage, " + s.getManaCost() + " mana.";
+        }
+        JOptionPane.showMessageDialog(null, spellString);
     }
 }

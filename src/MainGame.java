@@ -38,29 +38,10 @@ public class MainGame implements Serializable  {
 
         // Load game
         if(initialChoice == 1) {
-            // Prompt name of character
-            String characterName = JOptionPane.showInputDialog(null, "What is the character name?");
-            Player player = null;
-            try {
-                // Load the character
-                FileInputStream fileIn = new FileInputStream(SAVE_DIRECTORY+"\\"+characterName+".sav");
-                ObjectInputStream in = new ObjectInputStream(fileIn);
-                player = (Player) in.readObject();
-                in.close();
-                fileIn.close();
-                // Start game with the loaded character
-                mainMenu(player);
-            }
-            // Catch any IOException
-            catch(IOException i) {
-                i.printStackTrace();
-            }
-            // Catch any ClassNotFoundException
-            catch(ClassNotFoundException c) {
-                System.out.println("Player class not found");
-                c.printStackTrace();
-            }
-            quitGame();
+            // Load the player
+            Player player = loadGame();
+            // Start the game with the loaded player
+            mainMenu(player);
         }
 
 		// Ask what character the player wants
@@ -103,6 +84,46 @@ public class MainGame implements Serializable  {
         // End game
 		quitGame();
 	}
+
+    public static void saveGame(Player player) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream(SAVE_DIRECTORY + "\\" + player.getName() +".sav");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(player);
+            out.close();
+            fileOut.close();
+            JOptionPane.showMessageDialog(null, "Saved game!");
+
+        }
+        catch(IOException i) {
+            i.printStackTrace();
+        }
+    }
+
+    public static Player loadGame() {
+        // Prompt name of character
+        String characterName = JOptionPane.showInputDialog(null, "What is the character name?");
+        Player player = null;
+        try {
+            // Load the character
+            FileInputStream fileIn = new FileInputStream(SAVE_DIRECTORY+"\\"+characterName+".sav");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            player = (Player) in.readObject();
+            in.close();
+            fileIn.close();
+        }
+        // Catch any IOException
+        catch(IOException i) {
+            i.printStackTrace();
+        }
+        // Catch any ClassNotFoundException
+        catch(ClassNotFoundException c) {
+            System.out.println("Player class not found");
+            c.printStackTrace();
+        }
+        return player;
+    }
+
 	
 	/***
 	 * Displays the main menu
@@ -130,18 +151,7 @@ public class MainGame implements Serializable  {
             case 1: // Rest
                 break;
             case 2: // Save
-                try {
-                    FileOutputStream fileOut = new FileOutputStream(SAVE_DIRECTORY + "\\" + player.getName() +".sav");
-                    ObjectOutputStream out = new ObjectOutputStream(fileOut);
-                    out.writeObject(player);
-                    out.close();
-                    fileOut.close();
-                    JOptionPane.showMessageDialog(null, "Saved game!");
-
-                }
-                catch(IOException i) {
-                    i.printStackTrace();
-                }
+                saveGame(player);
                 break;
             case 3: // View Stats
                 playerStats(player);
@@ -151,13 +161,7 @@ public class MainGame implements Serializable  {
                     JOptionPane.showMessageDialog(null, "You aren't a sorcerer, you have no spells!");
                 }
                 else {
-                    // Display spells here
-                    String spellString = "";
-                    for(Spell s : ((Sorcerer)player).getSpells()) {
-                        spellString += s.getSpellName() + ": Level " + s.getSpellLevel() +", " +
-                                s.getMinDamage() + "-" + s.getMaxDamage() + " damage, " + s.getManaCost() + " mana.";
-                    }
-                    JOptionPane.showMessageDialog(null, spellString);
+                    ((Sorcerer)player).displaySpells();
                 }
                 break;
             case 5: // Equipment
@@ -172,7 +176,6 @@ public class MainGame implements Serializable  {
 
         mainMenu(player);
 	}
-
 
 
     /**
