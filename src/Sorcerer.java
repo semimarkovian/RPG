@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class Sorcerer extends Player implements Serializable {
 
     // Sorcerer constants
-    public static final int SORCERER_BASE_STR = 10;
-    public static final int SORCERER_BASE_DEX = 10;
-    public static final int SORCERER_BASE_INT = 25;
-    public static final int SORCERER_BASE_VIT = 10;
+    public static final int SORCERER_BASE_STR = 2;
+    public static final int SORCERER_BASE_DEX = 1;
+    public static final int SORCERER_BASE_INT = 5;
+    public static final int SORCERER_BASE_VIT = 3;
     public static final double SORCERER_BASE_CRIT_CHANCE = 0;
     public static final double SORCERER_BASE_CRIT_DAMAGE = 0;
     public static final double SORCERER_BASE_DOUBLE_CHANCE = 0.01;
@@ -69,7 +69,7 @@ public class Sorcerer extends Player implements Serializable {
 
         // Starting weapon
         Staff startingStaff = new Staff(SORCERER_STARTING_WEAPON_MIN_DAMAGE, SORCERER_STARTING_WEAPON_MAX_DAMAGE,
-                SORCERER_BASE_INT, SORCERER_STARING_WEAPON_NAME);
+                SORCERER_STARTING_WEAPON_INTELLIGENCE, SORCERER_STARING_WEAPON_NAME);
         this.equipment.add(startingStaff);
         this.equippedWeapon = startingStaff;
 

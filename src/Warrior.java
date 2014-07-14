@@ -6,10 +6,10 @@ import java.io.Serializable;
 public class Warrior extends Player implements Serializable {
 
     // Warrior base stats
-    public static final int WARRIOR_BASE_STR = 20;
-    public static final int WARRIOR_BASE_DEX = 15;
-    public static final int WARRIOR_BASE_INT = 5;
-    public static final int WARRIOR_BASE_VIT = 20;
+    public static final int WARRIOR_BASE_STR = 5;
+    public static final int WARRIOR_BASE_DEX = 2;
+    public static final int WARRIOR_BASE_INT = 1;
+    public static final int WARRIOR_BASE_VIT = 10;
     public static final double WARRIOR_BASE_CRIT_CHANCE = 0.05;
     public static final double WARRIOR_BASE_CRIT_DAMAGE = 2.0;
 

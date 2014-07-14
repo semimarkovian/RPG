@@ -6,10 +6,10 @@ import java.io.Serializable;
 public class Rogue extends Player implements Serializable {
 
     // Rogue constants
-    public static final int ROGUE_BASE_STR = 15;
-    public static final int ROGUE_BASE_DEX = 20;
-    public static final int ROGUE_BASE_INT = 10;
-    public static final int ROGUE_BASE_VIT = 10;
+    public static final int ROGUE_BASE_STR = 2;
+    public static final int ROGUE_BASE_DEX = 5;
+    public static final int ROGUE_BASE_INT = 1;
+    public static final int ROGUE_BASE_VIT = 4;
     public static final double ROGUE_BASE_CRIT_CHANCE = 0.1;
     public static final double ROGUE_BASE_CRIT_DAMAGE = 1.5;
 

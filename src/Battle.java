@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 import java.math.*;
 import java.util.Iterator;
+import java.util.Random;
 
 /***
  * This class represents a battle
@@ -77,7 +78,27 @@ public class Battle implements Serializable {
      * Determine the amount of damage dealt
      */
     public int playerDamageDealt(Player player, Monster monster) {
-        return player.baseDamage;
+        // Calculate player stats
+        player.calcStats();
+
+        // Player's base damage
+        int damage = player.baseDamage;
+
+        // Determine critical hit
+        if(Math.random() < player.critChance) {
+            damage *= player.critDamage;
+            JOptionPane.showMessageDialog(null, "Critical hit!");
+        }
+
+        // Factor in weapon damage
+        int minDamage = damage + player.equippedWeapon.minDamage;
+        int maxDamage = damage + player.equippedWeapon.maxDamage;
+
+        // Calculate the damage
+        Random rng = new Random();
+        damage = minDamage + rng.nextInt(maxDamage - minDamage);
+
+        return damage;
     }
 
     /**
@@ -110,6 +131,7 @@ public class Battle implements Serializable {
                 int damage = playerDamageDealt(player, monsters.get(target));
                 // If damage is positive, deal damage to monster
                 if(damage > 0) {
+                    JOptionPane.showMessageDialog(null, "You dealt " + damage + " damage.");
                     int targetMonsterLife = targetMonster.getLife();
                     targetMonster.setLife(targetMonsterLife - damage);
                 }

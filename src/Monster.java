@@ -46,6 +46,10 @@ public class Monster implements Serializable {
      * The monster's gold bounty
      */
     protected int goldBounty;
+    /**
+     * Level of the monster
+     */
+    protected int monsterLevel;
 
     /**
      * Default constructor
@@ -63,9 +67,10 @@ public class Monster implements Serializable {
      * @param accuracyRating The monster's accuracy rating
      * @param defenseRating The monster's defense rating
      * @param damageType The monster's damage type (physical or magical)
+     * @param monsterLevel Level of the monster
      */
 	public Monster(String monsterType, int life, int armor, int magicResist, int baseDamage, int accuracyRating,
-                   int defenseRating, String damageType, int expBounty, int goldBounty) {
+                   int defenseRating, String damageType, int expBounty, int goldBounty, int monsterLevel) {
 		this.monsterType = monsterType;
         this.life = life;
         this.armor = armor;
@@ -76,6 +81,7 @@ public class Monster implements Serializable {
         this.damageType = damageType;
         this.expBounty = expBounty;
         this.goldBounty = goldBounty;
+        this.monsterLevel = monsterLevel;
 	}
 
     /**

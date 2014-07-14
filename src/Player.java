@@ -154,7 +154,15 @@ public class Player implements Serializable {
 		// Formula for magic resist
 		magicResist = 1 + 2*intelligence;
 		// Formula for base damage
-		baseDamage = 5 + 2*strength + 1*dexterity;
+		if(characterClass == "Warrior") {
+            baseDamage = 5 + 2*strength;
+        }
+        else if(characterClass == "Rogue") {
+            baseDamage = 3 + 2*dexterity;
+        }
+        else {
+            baseDamage = 2 + 1*intelligence;
+        }
 	}
 
     /**
