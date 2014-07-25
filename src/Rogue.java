@@ -21,7 +21,7 @@ public class Rogue extends Player implements Serializable {
 
     // Rogue starting weapon
     public static final int ROGUE_STARTING_WEAPON_MIN_DAMAGE = 1;
-    public static final int ROGUE_STARTING_WEAPON_MAX_DAMAGE = 2;
+    public static final int ROGUE_STARTING_WEAPON_MAX_DAMAGE = 3;
     public static final int ROGUE_STARTING_WEAPON_DEXTERITY = 3;
     public static final double ROGUE_STARTING_WEAPON_CRIT_CHANCE = 0.05;
     public static final String ROGUE_STARING_WEAPON_NAME = "Wooden Bow";
