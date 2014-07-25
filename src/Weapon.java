@@ -1,4 +1,7 @@
 import java.io.Serializable;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /****
  * Weapons include swords, staves, and bows

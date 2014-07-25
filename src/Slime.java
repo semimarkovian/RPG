@@ -6,7 +6,7 @@ import java.io.Serializable;
 public class Slime extends Monster implements Serializable {
     // Slime stats
     public static final String SLIME_MONSTER_TYPE = "Slime";
-    public static final int SLIME_LIFE = 2;
+    public static final int SLIME_LIFE = 20;
     public static final int SLIME_ARMOR = 0;
     public static final int SLIME_MAGIC_RESIST = 0;
     public static final int SLIME_BASE_DAMAGE = 1;

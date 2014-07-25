@@ -1,4 +1,7 @@
 import java.io.Serializable;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
  * Used by warriors. Increases damage and crit damage.
@@ -26,5 +29,16 @@ public class Sword extends Weapon implements Serializable {
         super(minDamage, maxDamage, weaponName);
         this.critDamage = critDamage;
         this.strength = strength;
+    }
+
+    /**
+     * Loads sword from csv file
+     * @param scanner The Scanner object
+     */
+    public Sword(Scanner scanner) {
+        scanner.useDelimiter(",");
+        while(scanner.hasNext()) {
+            System.out.println(scanner.next()+"|");
+        }
     }
 }

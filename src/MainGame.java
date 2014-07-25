@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.io.*;
 import java.text.NumberFormat;
+import java.util.Scanner;
 
 /***
  * @author owner
@@ -19,6 +20,19 @@ public class MainGame implements Serializable  {
 	 * @param args Command-line arguments (not used)
 	 */
 	public static void main(String[] args) {
+
+//        // Testing
+//        try {
+//            Scanner scanner = new Scanner(new File("\\Weapons\\Swords\\Wooden Sword.csv"));
+//            Sword sword = new Sword(scanner);
+//        }
+//        catch(FileNotFoundException e) {
+//            System.out.println("File not found");
+//            System.exit(-1);
+//        }
+//
+//
+//        System.exit(0);
 
 		// Initialize JFrame stuff
 		JFrame frame = new JFrame();
